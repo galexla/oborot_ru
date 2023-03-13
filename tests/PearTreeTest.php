@@ -14,7 +14,7 @@ class PearTreeTest extends TestCase
      */
     public function should_have_correct_fruits_array_after_construct()
     {
-        $tree = new PearTree();
+        $tree = new PearTree(0);
         $fruits = Helper::getHiddenProperty('OborotRu\\PearTree', 'fruits', $tree);
         $this->assertIsArray($fruits);
         $this->assertEmpty($fruits);
@@ -25,7 +25,7 @@ class PearTreeTest extends TestCase
      */
     public function should_grow_correct_amount_of_fruits()
     {
-        $tree = new PearTree();
+        $tree = new PearTree(0);
         $tree->grow();
         $minFruits = Helper::getHiddenProperty('OborotRu\\PearTree', 'minFruits', $tree);
         $maxFruits = Helper::getHiddenProperty('OborotRu\\PearTree', 'maxFruits', $tree);
