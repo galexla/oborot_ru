@@ -3,10 +3,10 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use OborotRu\AppleTree;
+use OborotRu\PearTree;
 
 
-class AppleTreeTest extends TestCase
+class PearTreeTest extends TestCase
 {
 
     /**
@@ -14,8 +14,8 @@ class AppleTreeTest extends TestCase
      */
     public function should_have_correct_fruits_array_after_construct()
     {
-        $tree = new AppleTree();
-        $fruits = Helper::getHiddenProperty('OborotRu\\AppleTree', 'fruits', $tree);
+        $tree = new PearTree();
+        $fruits = Helper::getHiddenProperty('OborotRu\\PearTree', 'fruits', $tree);
         $this->assertIsArray($fruits);
         $this->assertEmpty($fruits);
     }
@@ -25,11 +25,11 @@ class AppleTreeTest extends TestCase
      */
     public function should_grow_correct_amount_of_fruits()
     {
-        $tree = new AppleTree();
+        $tree = new PearTree();
         $tree->grow();
-        $minFruits = Helper::getHiddenProperty('OborotRu\\AppleTree', 'minFruits', $tree);
-        $maxFruits = Helper::getHiddenProperty('OborotRu\\AppleTree', 'maxFruits', $tree);
-        $fruits = Helper::getHiddenProperty('OborotRu\\AppleTree', 'fruits', $tree);
+        $minFruits = Helper::getHiddenProperty('OborotRu\\PearTree', 'minFruits', $tree);
+        $maxFruits = Helper::getHiddenProperty('OborotRu\\PearTree', 'maxFruits', $tree);
+        $fruits = Helper::getHiddenProperty('OborotRu\\PearTree', 'fruits', $tree);
         $nFruits = count($fruits);
 
         $this->assertGreaterThanOrEqual($minFruits, $nFruits);
