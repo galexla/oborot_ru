@@ -11,4 +11,9 @@ class Garden
     {
         $this->trees[] = $tree;
     }
+
+    public function getTrees(): array
+    {
+        return $this->trees;
+    }
 }

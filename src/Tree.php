@@ -21,4 +21,12 @@ abstract class Tree
     {
         return $this->regNumber;
     }
+
+    public function harvest(): array
+    {
+        $fruits = $this->fruits;
+        $this->fruits = [];
+        
+        return $fruits;
+    }
 }

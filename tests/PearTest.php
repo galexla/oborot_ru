@@ -17,7 +17,7 @@ class PearTest extends TestCase
         $pear = new Pear();
         $minWeight = Helper::getHiddenProperty($pear, 'minWeight');
         $maxWeight = Helper::getHiddenProperty($pear, 'maxWeight');
-        $weight = Helper::getHiddenProperty($pear, 'weight');
+        $weight = $pear->getWeight();
 
         $this->assertIsInt($weight);
         $this->assertGreaterThanOrEqual($minWeight, $weight);
