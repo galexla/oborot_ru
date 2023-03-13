@@ -15,9 +15,9 @@ class AppleTest extends TestCase
     public function should_have_correct_weight()
     {
         $apple = new Apple();
-        $minWeight = Helper::getHiddenProperty('OborotRu\\Apple', 'minWeight', $apple);
-        $maxWeight = Helper::getHiddenProperty('OborotRu\\Apple', 'maxWeight', $apple);
-        $weight = Helper::getHiddenProperty('OborotRu\\Apple', 'weight', $apple);
+        $minWeight = Helper::getHiddenProperty($apple, 'minWeight');
+        $maxWeight = Helper::getHiddenProperty($apple, 'maxWeight');
+        $weight = Helper::getHiddenProperty($apple, 'weight');
 
         $this->assertIsInt($weight);
         $this->assertGreaterThanOrEqual($minWeight, $weight);

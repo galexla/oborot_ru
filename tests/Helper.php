@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use PhpParser\Node\Expr\Cast\Object_;
 
 /**
  * A helper. Not a test
@@ -9,9 +10,9 @@ namespace Tests;
 class Helper
 {
 
-    public static function getHiddenProperty($className, $propertyName, $instance)
+    public static function getHiddenProperty(Object $instance, $propertyName)
     {
-        $prop = new \ReflectionProperty($className, $propertyName);
+        $prop = new \ReflectionProperty($instance::class, $propertyName);
         $prop->setAccessible(true);
         return $prop->getValue($instance);
     }

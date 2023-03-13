@@ -17,7 +17,7 @@ class GardenTest extends TestCase
     public function should_have_correct_trees_array_after_construct()
     {
         $garden = new Garden();
-        $trees = Helper::getHiddenProperty('OborotRu\\Garden', 'trees', $garden);
+        $trees = Helper::getHiddenProperty($garden, 'trees');
         $this->assertIsArray($trees);
         $this->assertEmpty($trees);
     }
@@ -32,7 +32,7 @@ class GardenTest extends TestCase
         $garden->addTree(new AppleTree(0));
         $garden->addTree(new PearTree(0));
 
-        $trees = Helper::getHiddenProperty('OborotRu\\Garden', 'trees', $garden);
+        $trees = Helper::getHiddenProperty($garden, 'trees');
         $nTrees = count($trees);
 
         $this->assertEquals(3, $nTrees);
