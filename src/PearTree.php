@@ -13,8 +13,9 @@ class PearTree extends Tree
         if ($nFruits < 0) {
             $nFruits = random_int($this->minFruits, $this->maxFruits);
         } elseif ($nFruits < $this->minFruits || $nFruits > $this->maxFruits) {
-            throw new \Exception("Invalid value $nFruits for \$nFruits");
+            throw new \InvalidArgumentException("Invalid value $nFruits for \$nFruits");
         }
+        
         for ($i = 0; $i < $nFruits; $i++) {
             $this->fruits[] = new Pear();
         }
