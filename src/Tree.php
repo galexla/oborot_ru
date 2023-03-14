@@ -5,6 +5,9 @@ namespace OborotRu;
 
 abstract class Tree
 {
+    protected int $minFruits = 40;
+    protected int $maxFruits = 50;
+
     protected int $regNumber;
     protected array $fruits = [];
 
@@ -18,6 +21,16 @@ abstract class Tree
     public function getRegNumber(): int
     {
         return $this->regNumber;
+    }
+
+    public function getMinFruits(): int
+    {
+        return $this->minFruits;
+    }
+
+    public function getMaxFruits(): int
+    {
+        return $this->maxFruits;
     }
 
     public function harvest(): array
