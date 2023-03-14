@@ -9,6 +9,7 @@ class App
 {
     private int $nAppleTrees;
     private int $nPearTrees;
+    private Garden $garden;
 
     public function __construct(int $nAppleTrees = 10, int $nPearTrees = 15)
     {
@@ -20,42 +21,35 @@ class App
 
         $this->nAppleTrees = $nAppleTrees;
         $this->nPearTrees = $nPearTrees;
+
+        $this->garden = new Garden();
+
+        for ($i = 0; $i < $this->nAppleTrees; $i++) {
+            $tree = new AppleTree($i);
+            $this->garden->addTree($tree);
+            $tree->grow();
+        }
+
+        for ($i = 0; $i < $this->nPearTrees; $i++) {
+            $tree = new PearTree($i + $this->nAppleTrees);
+            $this->garden->addTree($tree);
+            $tree->grow();
+        }
     }
 
     public function run()
     {
-        $garden = $this->growGarden($this->nAppleTrees, $this->nPearTrees);
-
-        $harvester = new Harvester($garden);
+        $harvester = new Harvester($this->garden);
         $harvest = $harvester->harvest();
 
         $stats = new Statistics($harvest);
         $this->printStatistics($stats);
     }
 
-    private function growGarden(int $nAppleTrees, int $nPearTrees): Garden
-    {
-        $garden = new Garden();
-
-        for ($i = 0; $i < $nAppleTrees; $i++) {
-            $tree = new AppleTree($i);
-            $garden->addTree($tree);
-            $tree->grow();
-        }
-
-        for ($i = 0; $i < $nPearTrees; $i++) {
-            $tree = new PearTree($i + $nAppleTrees);
-            $garden->addTree($tree);
-            $tree->grow();
-        }
-
-        return $garden;
-    }
-
     private function printStatistics(Statistics $stats)
     {
         printf(
-            "Урожай:\n  яблоки: %d шт\n  груши: %d шт\n  общий вес: %d кг",
+            "Урожай:\n  яблоки: %d шт\n  груши: %d шт\n  общий вес: %d кг\n",
             $stats->applesCount(),
             $stats->pearsCount(),
             $stats->totalWeight()
