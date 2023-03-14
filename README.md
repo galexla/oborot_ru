@@ -7,5 +7,5 @@ $ php ./src/main.php
 ## Запуск тестов
 Тесты запустить можно командой:
 ```shell
-$ composer tests
+$ composer test
 ```
