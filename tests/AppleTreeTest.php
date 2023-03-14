@@ -72,7 +72,8 @@ class AppleTreeTest extends TestCase
         $this->assertEquals($nFruits, count($fruits));
 
         $tree = new AppleTree(0);
-        $tree->grow();
+        $nFruits = random_int($tree->getMinFruits(), $tree->getMaxFruits());
+        $tree->grow($nFruits);
         $fruits = Helper::getHiddenProperty($tree, 'fruits');
         $nFruits = count($fruits);
 

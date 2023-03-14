@@ -24,7 +24,8 @@ class StatisticsTest extends TestCase
         $trees = $garden->getTrees();
         $weight = 0;
         foreach ($trees as $tree) {
-            $tree->grow();
+            $nFruits = random_int($tree->getMinFruits(), $tree->getMaxFruits());
+            $tree->grow($nFruits);
             $fruits = Helper::getHiddenProperty($tree, 'fruits');
             foreach ($fruits as $fruit) {
                 $weight += $fruit->getWeight();

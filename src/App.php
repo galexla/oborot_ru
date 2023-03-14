@@ -27,13 +27,15 @@ class App
         for ($i = 0; $i < $this->nAppleTrees; $i++) {
             $tree = new AppleTree($i);
             $this->garden->addTree($tree);
-            $tree->grow();
+            $nFruits = random_int($tree->getMinFruits(), $tree->getMaxFruits());
+            $tree->grow($nFruits);
         }
 
         for ($i = 0; $i < $this->nPearTrees; $i++) {
             $tree = new PearTree($i + $this->nAppleTrees);
             $this->garden->addTree($tree);
-            $tree->grow();
+            $nFruits = random_int($tree->getMinFruits(), $tree->getMaxFruits());
+            $tree->grow($nFruits);
         }
     }
 

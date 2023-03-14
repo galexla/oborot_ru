@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
-use OborotRu\{Harvester, Garden};
-use OborotRu\Trees\{AppleTree, PearTree};
 use OborotRu\Fruits\{Apple, Pear};
+use OborotRu\Trees\{AppleTree, PearTree};
+use OborotRu\{Harvester, Garden};
+use PHPUnit\Framework\TestCase;
 
 
 class HarvesterTest extends TestCase
@@ -41,7 +41,8 @@ class HarvesterTest extends TestCase
 
         $trees = $garden->getTrees();
         foreach ($trees as $tree) {
-            $tree->grow();
+            $nFruits = random_int($tree->getMinFruits(), $tree->getMaxFruits());
+            $tree->grow($nFruits);
         }
 
         $nApplesBefore = count(Helper::getHiddenProperty($trees[0], 'fruits'));

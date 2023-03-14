@@ -16,7 +16,16 @@ abstract class Tree
         $this->regNumber = $regNumber;
     }
 
-    public abstract function grow(int $nFruits = -1);
+    public function grow(int $nFruits)
+    {
+        if (!empty($this->fruits)) {
+            throw new \Exception("You can only grow trees once.");
+        }
+
+        if ($nFruits < 0 || $nFruits < $this->minFruits || $nFruits > $this->maxFruits) {
+            throw new \InvalidArgumentException("Invalid value $nFruits for \$nFruits");
+        }
+    }
 
     public function getRegNumber(): int
     {
