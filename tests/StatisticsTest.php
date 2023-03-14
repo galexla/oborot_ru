@@ -21,7 +21,7 @@ class StatisticsTest extends TestCase
         $garden->addTree(new AppleTree(0));
         $garden->addTree(new PearTree(0));
 
-        $trees = Helper::getHiddenProperty($garden, 'trees');
+        $trees = $garden->getTrees();
         $weight = 0;
         foreach ($trees as $tree) {
             $tree->grow();

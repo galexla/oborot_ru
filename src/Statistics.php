@@ -34,11 +34,13 @@ class Statistics
     {
         if (empty($fruits)) return 0;
 
-        return array_reduce(
+        $weight = array_reduce(
             $fruits,
             function ($sum, $fruit) {
                 return $sum + $fruit->getWeight();
             }
         );
+
+        return $weight;
     }
 }

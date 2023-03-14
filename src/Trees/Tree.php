@@ -5,8 +5,8 @@ namespace OborotRu\Trees;
 
 abstract class Tree
 {
-    protected int $minFruits = 40;
-    protected int $maxFruits = 50;
+    protected int $minFruits;
+    protected int $maxFruits;
 
     protected int $regNumber;
     protected array $fruits = [];
@@ -31,6 +31,20 @@ abstract class Tree
     public function getMaxFruits(): int
     {
         return $this->maxFruits;
+    }
+
+    public function getFruitsCount(): int
+    {
+        return count($this->fruits);
+    }
+
+    public function getFruitsWeight(): int
+    {
+        $weight = 0;
+        foreach ($this->fruits as $fruit) {
+            $weight += $fruit->getWeight();
+        }
+        return $weight;
     }
 
     public function harvest(): array

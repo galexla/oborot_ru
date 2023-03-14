@@ -18,4 +18,13 @@ class Garden
     {
         return $this->trees;
     }
+
+    public function getFruitsWeight(): int
+    {
+        $weight = 0;
+        foreach ($this->trees as $tree) {
+            $weight += $tree->getFruitsWeight();
+        }
+        return floor($weight / 1000);
+    }
 }
