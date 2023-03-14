@@ -7,15 +7,13 @@ abstract class Tree
 {
     protected int $regNumber;
     protected array $fruits = [];
-    protected int $minFruits;
-    protected int $maxFruits;
 
     public function __construct($regNumber)
     {
         $this->regNumber = $regNumber;
     }
 
-    public abstract function grow();
+    public abstract function grow(int $nFruits = -1);
 
     public function getRegNumber(): int
     {
