@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
 use OborotRu\Trees\AppleTree;
+use PHPUnit\Framework\TestCase;
 
 
 class AppleTreeTest extends TestCase
@@ -78,5 +78,18 @@ class AppleTreeTest extends TestCase
 
         $this->assertGreaterThanOrEqual($tree->getMinFruits(), $nFruits);
         $this->assertLessThanOrEqual($tree->getMaxFruits(), $nFruits);
+    }
+
+    /**
+     * @test
+     */
+    public function should_not_grow_twice()
+    {
+        $tree = new AppleTree(0);
+        $nFruits = $tree->getMinFruits();
+        $tree->grow($nFruits);
+        
+        $this->expectException(\Exception::class);
+        $tree->grow($nFruits);
     }
 }

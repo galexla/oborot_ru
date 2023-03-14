@@ -12,6 +12,10 @@ class PearTree extends Tree
 
     public function grow(int $nFruits = -1)
     {
+        if (!empty($this->fruits)) {
+            throw new \Exception("You can only grow trees once.");
+        }
+
         if ($nFruits < 0) {
             $nFruits = random_int($this->minFruits, $this->maxFruits);
         } elseif ($nFruits < $this->minFruits || $nFruits > $this->maxFruits) {
