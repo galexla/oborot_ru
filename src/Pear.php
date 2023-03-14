@@ -8,8 +8,12 @@ class Pear extends Fruit
     private int $minWeight = 130;
     private int $maxWeight = 170;
 
-    function __construct()
+    function __construct(int $weight = 0)
     {
-        $this->weight = random_int($this->minWeight, $this->maxWeight);
+        if ($weight > 0) {
+            $this->weight = $weight;
+        } else {
+            $this->weight = random_int($this->minWeight, $this->maxWeight);
+        }
     }
 }

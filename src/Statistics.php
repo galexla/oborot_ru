@@ -27,11 +27,13 @@ class Statistics
         $weight = $this->getWeight($this->harvest->apples);
         $weight += $this->getWeight($this->harvest->pears);
 
-        return $weight;
+        return floor($weight / 1000);
     }
 
     private function getWeight(array $fruits): int
     {
+        if (empty($fruits)) return 0;
+
         return array_reduce(
             $fruits,
             function ($sum, $fruit) {

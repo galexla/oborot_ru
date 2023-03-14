@@ -28,6 +28,7 @@ class StatisticsTest extends TestCase
                 $weight += $fruit->getWeight();
             }
         }
+        $weight = floor($weight / 1000);
 
         $harvester = new Harvester($garden);
         $harvest = $harvester->harvest();
