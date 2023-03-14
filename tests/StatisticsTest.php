@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
-use OborotRu\{Harvester, Garden, Statistics};
-use OborotRu\Trees\{AppleTree, PearTree};
 use OborotRu\Fruits\{Apple, Pear};
+use OborotRu\Trees\{AppleTree, PearTree};
+use OborotRu\{Harvester, Garden, Statistics};
+use PHPUnit\Framework\TestCase;
 
 
 class StatisticsTest extends TestCase
@@ -37,6 +37,6 @@ class StatisticsTest extends TestCase
 
         $stats = new Statistics($harvest);
 
-        $this->assertEquals($weight, $stats->totalWeight());
+        $this->assertEquals($weight, $stats->getTotalWeight());
     }
 }

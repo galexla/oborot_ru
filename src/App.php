@@ -50,9 +50,9 @@ class App
     {
         printf(
             "Урожай:\n  яблоки: %d шт\n  груши: %d шт\n  общий вес: %d кг\n",
-            $stats->applesCount(),
-            $stats->pearsCount(),
-            $stats->totalWeight()
+            $stats->getApplesCount(),
+            $stats->getPearsCount(),
+            $stats->getTotalWeight()
         );
     }
 }

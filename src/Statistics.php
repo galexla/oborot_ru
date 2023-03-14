@@ -12,17 +12,17 @@ class Statistics
         $this->harvest = $harvest;
     }
 
-    public function applesCount(): int
+    public function getApplesCount(): int
     {
         return count($this->harvest->apples);
     }
 
-    public function pearsCount(): int
+    public function getPearsCount(): int
     {
         return count($this->harvest->pears);
     }
 
-    public function totalWeight(): int
+    public function getTotalWeight(): int
     {
         $weight = $this->getWeight($this->harvest->apples);
         $weight += $this->getWeight($this->harvest->pears);
