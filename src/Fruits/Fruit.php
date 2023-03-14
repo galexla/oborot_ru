@@ -1,6 +1,6 @@
 <?php
 
-namespace OborotRu;
+namespace OborotRu\Fruits;
 
 
 abstract class Fruit

@@ -3,7 +3,9 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use OborotRu\{Harvester, Garden, AppleTree, PearTree, Apple, Pear, Statistics};
+use OborotRu\{Harvester, Garden, Statistics};
+use OborotRu\Trees\{AppleTree, PearTree};
+use OborotRu\Fruits\{Apple, Pear};
 
 
 class StatisticsTest extends TestCase

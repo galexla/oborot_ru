@@ -2,6 +2,8 @@
 
 namespace OborotRu;
 
+use OborotRu\Trees\Tree;
+
 
 class Garden
 {

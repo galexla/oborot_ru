@@ -15,7 +15,6 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "OborotRu\\": "src",
             "Tests\\": "tests"
         }
     },

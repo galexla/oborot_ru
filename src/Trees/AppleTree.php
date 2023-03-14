@@ -1,6 +1,8 @@
 <?php
 
-namespace OborotRu;
+namespace OborotRu\Trees;
+
+use OborotRu\Fruits\Apple;
 
 
 class AppleTree extends Tree

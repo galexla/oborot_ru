@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use OborotRu\AppleTree;
+use OborotRu\Trees\AppleTree;
 
 
 class AppleTreeTest extends TestCase

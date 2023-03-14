@@ -4,8 +4,7 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 use OborotRu\Garden;
-use OborotRu\AppleTree;
-use OborotRu\PearTree;
+use OborotRu\Trees\{AppleTree, PearTree};
 
 
 class GardenTest extends TestCase

@@ -2,6 +2,8 @@
 
 namespace OborotRu;
 
+use OborotRu\Trees\{AppleTree, PearTree};
+
 
 class Harvester
 {

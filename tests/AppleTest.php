@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use OborotRu\Apple;
+use OborotRu\Fruits\Apple;
 
 
 class AppleTest extends TestCase

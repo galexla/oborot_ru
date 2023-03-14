@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use OborotRu\Pear;
+use OborotRu\Fruits\Pear;
 
 
 class PearTest extends TestCase

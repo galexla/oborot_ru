@@ -1,6 +1,6 @@
 <?php
 
-namespace OborotRu;
+namespace OborotRu\Trees;
 
 
 abstract class Tree

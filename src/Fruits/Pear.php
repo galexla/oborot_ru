@@ -1,12 +1,12 @@
 <?php
 
-namespace OborotRu;
+namespace OborotRu\Fruits;
 
 
-class Apple extends Fruit
+class Pear extends Fruit
 {
-    private int $minWeight = 150;
-    private int $maxWeight = 180;
+    private int $minWeight = 130;
+    private int $maxWeight = 170;
 
     function __construct(int $weight = 0)
     {
